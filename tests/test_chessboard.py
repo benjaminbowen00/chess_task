@@ -31,6 +31,10 @@ class ChessBoardTest(unittest.TestCase):
         is_valid = self.chess_board.is_legal_board_position(7, 7)
         assert is_valid == True
 
+    def test_upper_right_corner_is_valid_position_8(self):
+        is_valid = self.chess_board.is_legal_board_position(7, 8)
+        assert is_valid == False
+
     def test_position_out_of_bounds_east_is_invalid(self):
         is_valid = self.chess_board.is_legal_board_position(11, 5)
         assert is_valid == False
@@ -53,7 +57,7 @@ class ChessBoardTest(unittest.TestCase):
     def test_limits_the_number_of_pawns(self):
         for count in range(10):
             pawn = Pawn(PieceColor.BLACK)
-            row = count / self.chess_board.MAX_BOARD_WIDTH
+            row = count / (self.chess_board.MAX_BOARD_WIDTH+1)
             self.chess_board.add(
                 pawn,
                 count,
