@@ -7,3 +7,5 @@ sys.path.append("../")
 to get correct imports
 
 Problem with MAX_BOARD_WIDTH/HEIGHT being 7 (due to list index)
+
+decided best to change max_width to 8

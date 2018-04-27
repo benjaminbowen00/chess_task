@@ -18,10 +18,10 @@ class ChessBoardTest(unittest.TestCase):
 
 
     def test_has_max_board_width_of_7(self):
-        assert self.chess_board.MAX_BOARD_HEIGHT == 7
+        assert self.chess_board.MAX_BOARD_HEIGHT == 8
 
     def test_has_max_board_height_of_7(self):
-        assert self.chess_board.MAX_BOARD_WIDTH == 7
+        assert self.chess_board.MAX_BOARD_WIDTH == 8
 
     def test_lower_left_corner_is_valid_position(self):
         is_valid = self.chess_board.is_legal_board_position(0, 0)
@@ -57,7 +57,7 @@ class ChessBoardTest(unittest.TestCase):
     def test_limits_the_number_of_pawns(self):
         for count in range(10):
             pawn = Pawn(PieceColor.BLACK)
-            row = count / (self.chess_board.MAX_BOARD_WIDTH+1)
+            row = count / self.chess_board.MAX_BOARD_WIDTH
             self.chess_board.add(
                 pawn,
                 count,
@@ -71,7 +71,7 @@ class ChessBoardTest(unittest.TestCase):
             else:
                 assert pawn.x_coordinate == -1
                 assert pawn.y_coordinate == -1
-
+            
 
 if __name__ == '__main__':
     unittest.main()

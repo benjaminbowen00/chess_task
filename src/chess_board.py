@@ -1,9 +1,9 @@
 class ChessBoard:
-    MAX_BOARD_WIDTH = 7
-    MAX_BOARD_HEIGHT = 7
+    MAX_BOARD_WIDTH = 8
+    MAX_BOARD_HEIGHT = 8
 
     def __init__(self):
-        self.pieces = [[None] * (self.MAX_BOARD_WIDTH + 1) for _ in range(self.MAX_BOARD_HEIGHT + 1)]
+        self.pieces = [[None] * self.MAX_BOARD_WIDTH for _ in range(self.MAX_BOARD_HEIGHT)]
 
     def add(self, pawn, x_coordinate, y_coordinate, piece_color):
         if self.is_legal_board_position(x_coordinate, y_coordinate) and self.pieces[y_coordinate][x_coordinate] is None:
