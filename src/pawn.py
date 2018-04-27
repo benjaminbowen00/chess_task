@@ -1,21 +1,12 @@
 
-from src.movement_type import MovementType
-from src.piece_color import PieceColor
+from movement_type import MovementType
+from piece_color import PieceColor
 
 class Pawn:
     def __init__(self, piece_color):
         self._piece_color = piece_color
-        self._chess_board = None
         self._x_coordinate = None
         self._y_coordinate = None
-
-    @property
-    def chess_board(self):
-        return self._chess_board
-
-    @chess_board.setter
-    def chess_board(self, value):
-        self._chess_board = value
 
     @property
     def x_coordinate(self):
@@ -54,7 +45,13 @@ class Pawn:
             self.y_coordinate = new_y
 
 
-    def __unicode__(self):
+    def __str__(self):
         return 'Current X: {}\nCurrent Y: {}\nPiece Color: {}'.format(
             self.x_coordinate, self.y_coordinate, self.piece_color
         )
+
+pawn = Pawn(PieceColor.BLACK)
+pawn.x_coordinate = 2
+pawn.y_coordinate = 3
+
+print(pawn)

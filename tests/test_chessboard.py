@@ -5,17 +5,12 @@ sys.path.append("../")
 from src.chess_board import ChessBoard
 from src.pawn import Pawn
 from src.piece_color import PieceColor
-# import src.chess_board
-# import src.pawn
-# import src.piece_color
+
 
 class ChessBoardTest(unittest.TestCase):
     def setUp(self):
         super().setUp()
-
         self.chess_board = ChessBoard()
-
-
 
     def test_has_max_board_width_of_7(self):
         assert self.chess_board.MAX_BOARD_HEIGHT == 8
@@ -71,7 +66,7 @@ class ChessBoardTest(unittest.TestCase):
             else:
                 assert pawn.x_coordinate == -1
                 assert pawn.y_coordinate == -1
-            
+
 
 if __name__ == '__main__':
     unittest.main()
