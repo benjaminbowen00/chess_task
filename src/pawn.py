@@ -1,6 +1,7 @@
 
-from movement_type import MovementType
-from piece_color import PieceColor
+
+from src.movement_type import MovementType
+from src.piece_color import PieceColor
 
 class Pawn:
     def __init__(self, piece_color):
@@ -49,9 +50,3 @@ class Pawn:
         return 'Current X: {}\nCurrent Y: {}\nPiece Color: {}'.format(
             self.x_coordinate, self.y_coordinate, self.piece_color
         )
-
-pawn = Pawn(PieceColor.BLACK)
-pawn.x_coordinate = 2
-pawn.y_coordinate = 3
-
-print(pawn)

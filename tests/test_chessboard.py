@@ -9,7 +9,6 @@ from src.piece_color import PieceColor
 
 class ChessBoardTest(unittest.TestCase):
     def setUp(self):
-        super().setUp()
         self.chess_board = ChessBoard()
 
     def test_has_max_board_width_of_7(self):
@@ -26,7 +25,7 @@ class ChessBoardTest(unittest.TestCase):
         is_valid = self.chess_board.is_legal_board_position(7, 7)
         assert is_valid == True
 
-    def test_upper_right_corner_is_valid_position_8(self):
+    def test_upper_right_corner_is_not_valid_position_if_8(self):
         is_valid = self.chess_board.is_legal_board_position(7, 8)
         assert is_valid == False
 

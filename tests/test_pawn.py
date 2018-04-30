@@ -49,5 +49,12 @@ class TestPawn(unittest.TestCase):
         assert self.pawn.x_coordinate == 6
         assert self.pawn.y_coordinate == 2
 
+    def test_that_move_to_legal_coords_forward_does_move_white(self):
+        self.chess_board.add(self.pawn, 6, 3, PieceColor.WHITE)
+        self.pawn.move(MovementType.MOVE, 6, 4)
+
+        assert self.pawn.x_coordinate == 6
+        assert self.pawn.y_coordinate == 4
+
 if __name__ == '__main__':
     unittest.main()
